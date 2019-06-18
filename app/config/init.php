@@ -3,6 +3,7 @@
 define('DEBUG', 1);
 define('ROOT', dirname(__DIR__, 2));
 define('WWW', ROOT . '/public' );
+define('SRC', ROOT . '/resource' );
 define('APP', ROOT . '/app');
 define('CORE', ROOT . '/vendor/cms/core');
 define('LIBS', ROOT . '/vendor/cms/core/libs');

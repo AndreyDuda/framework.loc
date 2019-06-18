@@ -15,6 +15,7 @@ class App
 		session_start();
 		self::$app = Registry::instance();
 		$this->getParams();
+		new ErrorHandler();
 	}
 	
 	protected function getParams(): void

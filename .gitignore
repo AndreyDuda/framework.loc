@@ -2,3 +2,5 @@ docker/mysql
 .idea
 vendor/*
 !vendor/cms
+storage/cache
+storage/errors
