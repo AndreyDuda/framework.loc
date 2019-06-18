@@ -68,8 +68,8 @@ class ErrorHandler
 	protected function displayError(
 		string $errno,
 		string $errstr,
-		string $errFile,
-		string $errLine,
+		string $errfile,
+		string $errline,
 		int $responce = 404
 	): void
 	{

@@ -174,8 +174,8 @@
 <body>
 <div class="wrap">
 	<div class="logo">
-		<img src="<?php echo SRC ?>/images/404.png" alt=""  />
-		<p><a href="#">Go back to Home</a></p>
+		<img src="public/images/images/404.png" alt=""  />
+		<p><a href="<?php echo HOME ?>">Go back to Home</a></p>
 	</div>
 </div>
 <div class="footer">
