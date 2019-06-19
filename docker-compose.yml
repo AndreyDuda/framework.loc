@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: nginx:1.10
+    image: nginx
     container_name: frmvrk-nginx
     links:
       - php-fpm

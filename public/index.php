@@ -6,4 +6,3 @@ require_once CONFIG . '/routes.php';
 use cms\App;
 
 $test = new App();
-var_dump(\cms\Router::getRoutes());
