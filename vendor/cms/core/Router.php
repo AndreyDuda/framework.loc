@@ -43,9 +43,8 @@ class Router
 				$controller = new $controller(self::$route);
 				$action = self::lowerCamelCase(self::$route['action']) . 'Action';
 				if (method_exists($controller, $action)) {
-					return $controller->$action();
-				} else {
-					return $controller->$action();
+					$controller->$action();
+					$controller->getView();
 				}
 			} else {
 				throw new \Exception('Контроллер' . $controller . ' не найден', 404);

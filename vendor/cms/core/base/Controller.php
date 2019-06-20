@@ -30,6 +30,11 @@ class Controller
 	public $prefix;
 	
 	/**
+	 * @var string
+	 */
+	public $layout;
+	
+	/**
 	 * @var array
 	 */
 	public $data = [];
@@ -63,6 +68,13 @@ class Controller
 	{
 		throw new \Exception('Метод ' . $this->controller . '::' . $this->view .' не найден');
 		die;
+	}
+	
+	public function getView()
+	{
+		/** @var View $view */
+		$view = new View($this->route, $this->layout, $this->view, $this->meta);
+		$view->render($this->data);
 	}
 	
 	/**

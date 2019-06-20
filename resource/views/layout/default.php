@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Ш-А-Б-Л-О-Н = D-E-F-A-U-L-T</h1>
+<?php echo $content;?>
 </body>
 </html>
