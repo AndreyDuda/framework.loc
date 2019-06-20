@@ -2,7 +2,7 @@
 
 namespace app\http\controllers;
 
-class PageController
+class PageController extends AppController
 {
 	public function indexAction()
 	{

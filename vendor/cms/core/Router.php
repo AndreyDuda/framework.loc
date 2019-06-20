@@ -45,7 +45,7 @@ class Router
 				if (method_exists($controller, $action)) {
 					return $controller->$action();
 				} else {
-					throw new \Exception('Метод ' . $controller . '::' . $action .' не найден', 404);
+					return $controller->$action();
 				}
 			} else {
 				throw new \Exception('Контроллер' . $controller . ' не найден', 404);

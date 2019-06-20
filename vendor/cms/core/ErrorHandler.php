@@ -74,7 +74,7 @@ class ErrorHandler
 	): void
 	{
 		http_response_code((int)$responce);
-		if (DEBUG && isset(self::FILE_ERROR[$responce])) {
+		if (!DEBUG && isset(self::FILE_ERROR[$responce])) {
 			require_once self::FILE_ERROR[$responce];
 		} elseif (DEBUG) {
 			require_once self::FILE_ERROR[self::ERR_DEV];

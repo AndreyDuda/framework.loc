@@ -2,10 +2,11 @@
 
 namespace app\http\controllers;
 
-class MainController
+class MainController extends AppController
 {
 	public function indexAction()
 	{
-		echo 'Hello';
+		var_dump($this->route);
+		echo 'MainController -> indexAction';
 	}
 }
