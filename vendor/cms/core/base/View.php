@@ -44,6 +44,10 @@ class View
 	 */
 	public $meta = [];
 	
+	const PATH_VIEWS = SRC . '/views/';
+	
+	const PATH_LAYOUT = SRC . '/views/layout/';
+	
 	/**
 	 * View constructor.
 	 * @param array $route
@@ -68,7 +72,7 @@ class View
 	
 	public function render($data)
 	{
-		$viewFile = SRC . '/views/' . $this->prefix . $this->controller . '/' . $this->view . '.php';
+		$viewFile = self::PATH_VIEWS . $this->prefix . $this->controller . '/' . $this->view . '.php';
 		
 		if (is_file($viewFile)) {
 			ob_start();
@@ -80,7 +84,7 @@ class View
 		
 		if ($this->layout !== false)
 		{
-			echo $layoutFile = SRC . '/views/layout/' . $this->layout . '.php';
+			$layoutFile = self::PATH_LAYOUT . $this->layout . '.php';
 			
 			if (is_file($layoutFile)) {
 				require_once $layoutFile;
