@@ -51,7 +51,7 @@ class View
 	 * @param string $view
 	 * @param array $meta
 	 */
-	public function __construct(array $route, string $layout = '', string $view = '', array $meta)
+	public function __construct(array $route, $layout = '', string $view = '', array $meta)
 	{
 		$this->route = $route;
 		$this->controller = $route['controller'];
