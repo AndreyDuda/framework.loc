@@ -42,7 +42,11 @@ class View
 	/**
 	 * @var array
 	 */
-	public $meta = [];
+	public $meta = [
+		'title'    => '',
+		'desc'     => '',
+		'keywords' => ''
+	];
 	
 	const PATH_VIEWS = SRC . '/views/';
 	
@@ -62,7 +66,7 @@ class View
 		$this->model = $route['controller'];
 		$this->view = $view;
 		$this->prefix = $route['prefix'];
-		$this->meta = $meta;
+		$this->meta = array_merge($this->meta, $meta);
 		if ($layout === false) {
 			$this->layout = false;
 		} else {
@@ -72,9 +76,13 @@ class View
 	
 	public function render($data)
 	{
+		if(is_array($data)) {
+			extract($data);
+		}
+		
 		$viewFile = self::PATH_VIEWS . $this->prefix . $this->controller . '/' . $this->view . '.php';
 		
-		if (is_file($viewFile)) {
+		if (file_exists($viewFile)) {
 			ob_start();
 			require_once $viewFile;
 			$content = ob_get_clean();
@@ -82,15 +90,20 @@ class View
 			throw new \Exception("не найден вид " . $viewFile);
 		}
 		
-		if ($this->layout !== false)
-		{
-			$layoutFile = self::PATH_LAYOUT . $this->layout . '.php';
-			
-			if (is_file($layoutFile)) {
-				require_once $layoutFile;
-			} else {
-				throw new \Exception("не найден вид " . $layoutFile);
-			}
+		$layoutFile = ($this->layout === false)?: self::PATH_LAYOUT . $this->layout . '.php';
+		if (file_exists($layoutFile)) {
+			require_once $layoutFile;
+		} else {
+			throw new \Exception("не найден шаблон " . $layoutFile);
 		}
+	}
+	
+	public function getMeta()
+	{
+		$output  = '<title>' . $this->meta['title'] . '</title>' . PHP_EOL;
+		$output .= '<meta name="description" content="' . $this->meta['desc'] .'">' . PHP_EOL;
+		$output .= '<meta name="keywords" content="' . $this->meta['keywords'] .'">' . PHP_EOL;
+		
+		return $output;
 	}
 }
