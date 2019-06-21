@@ -68,7 +68,7 @@ class View
 	
 	public function render($data)
 	{
-		$viewFile = APP . '/views/' . $this->prefix . $this->controller . '/' . $this->view . 'php';
+		$viewFile = SRC . '/views/' . $this->prefix . $this->controller . '/' . $this->view . '.php';
 		
 		if (is_file($viewFile)) {
 			ob_start();
@@ -78,13 +78,14 @@ class View
 			throw new \Exception("не найден вид " . $viewFile);
 		}
 		
-		if ($this->layout !== $this->layout)
+		if ($this->layout !== false)
 		{
-			echo $layoutFile = APP . '/view/layouts/' . $this->layout . '.php';
+			echo $layoutFile = SRC . '/views/layout/' . $this->layout . '.php';
+			
 			if (is_file($layoutFile)) {
 				require_once $layoutFile;
 			} else {
-				throw new \Exception("не найден вид " . $this->layout);
+				throw new \Exception("не найден вид " . $layoutFile);
 			}
 		}
 	}
