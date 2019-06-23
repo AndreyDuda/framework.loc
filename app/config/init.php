@@ -13,7 +13,3 @@ define('APP',    ROOT . '/app');
 define('CORE',   ROOT . '/vendor/cms/core');
 define('LIBS',   ROOT . '/vendor/cms/core/libs');
 define('CONFIG', APP . '/config');
-
-
-
-require_once ROOT . '/vendor/autoload.php';
