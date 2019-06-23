@@ -37,6 +37,7 @@ class Router
 	 */
 	public static function dispatch(string $url)
 	{
+		/*$url = self::removeQueryString($url);*/
 		if (self::matchRoute($url)) {
 			$controller = self::PATH_CONTROLLER . self::$route['prefix'] . self::$route['controller'] . 'Controller';
 			if (class_exists($controller)) {
@@ -91,9 +92,25 @@ class Router
 		return str_replace(' ', '', $name);
 	}
 	
-	protected static function lowerCamelCase($name)
+	protected static function lowerCamelCase(string $name): string
 	{
 		return lcfirst(self::upperCamelCase($name));
 	}
 	
+	/**
+	 * @param string $url
+	 * @return string
+	 */
+	protected static function removeQueryString(string $url)
+	{
+		if ($url) {
+			$params = explode('&', $url, 2);
+			/*var_dump($params);*/
+			if (strpos($params[0], '=') === false) {
+				return rtrim($params[0]. '/');
+			} else {
+				return '';
+			}
+		}
+	}
 }
