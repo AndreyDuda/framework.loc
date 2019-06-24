@@ -4,7 +4,7 @@
 		"cms\\": "vendor/cms/core",
 		"app\\": "app"
 	  },
-	  "psr-0": {"": "app/entities/models"}
+	  "psr-0": {"": "app/entities/models/"}
 	},
   "require": {
         "vlucas/phpdotenv": "^3.4",

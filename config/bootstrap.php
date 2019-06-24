@@ -4,12 +4,12 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Dotenv\Dotenv;
 
-require ROOT . "/vendor/autoload.php";
+define('ROOT', dirname(__DIR__, 1));
 $isDevMode = true;
 
 $params = [];
 
-$config = Setup::createAnnotationMetadataConfiguration([ROOT . "/app/entities/models"], $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration([ROOT ."/app/entities/models"], $isDevMode);
 $dotenv = Dotenv::create(ROOT);
 $dotenv->load();
 $connection = [
@@ -17,7 +17,11 @@ $connection = [
 	'user' => getenv('DB_USERNAME'),
 	'password' => getenv('DB_PASSWORD'),
 	'host' => getenv('DB_HOST'),
-	'driver' => getenv('DB_DRIVER')
+	'driver' => getenv('DB_DRIVER'),
+	'defaultDatabaseOptions' => [
+		'charset' => 'utf8',
+		'collate' => 'utf8_general_ci'
+		]
 ];
 
 $entityManager = EntityManager::create($connection, $config);
