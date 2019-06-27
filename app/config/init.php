@@ -1,8 +1,8 @@
 <?php
 $app_path = preg_replace('#[^/]+$#', '', 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
-$app_path = str_replace('/public/', '', $app_path);
+$app_path = str_replace('//', '', $app_path);
 
-define('LAYOUT', 'default');
+define('LAYOUT', 'watches');
 define('DEBUG', 1);
 define('ROOT', dirname(__DIR__, 2));
 define('HOME',   $app_path);

@@ -174,7 +174,7 @@
 <body>
 <div class="wrap">
 	<div class="logo">
-		<img src="public/images/images/404.png" alt=""  />
+		<img src="/images/images/404.png" alt=""  />
 		<p><a href="<?php echo HOME ?>">Go back to Home</a></p>
 	</div>
 </div>
