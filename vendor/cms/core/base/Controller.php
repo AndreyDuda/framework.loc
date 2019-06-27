@@ -98,4 +98,12 @@ class Controller
 			'keywords' => $keywords
 		];
 	}
+	
+	/**
+	 * @return array
+	 */
+	public function getMeta(): array
+	{
+		return $this->meta;
+	}
 }
