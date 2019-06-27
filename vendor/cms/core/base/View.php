@@ -84,8 +84,9 @@ class View
 		
 		if (file_exists($viewFile)) {
 			ob_start();
-			require_once $viewFile;
 			$content = ob_get_clean();
+			require_once $viewFile;
+			
 		} else {
 			throw new \Exception("не найден вид " . $viewFile);
 		}

@@ -1,4 +1,3 @@
-<!--banner-starts-->
 <div class="bnr" id="home">
 	<div  id="top" class="callbacks_container">
 		<ul class="rslides" id="slider4">
@@ -15,9 +14,7 @@
 	</div>
 	<div class="clearfix"> </div>
 </div>
-<!--banner-ends-->
 
-<!--about-starts-->
 <div class="about">
 	<div class="container">
 		<div class="about-top grid-1">
@@ -52,8 +49,7 @@
 		</div>
 	</div>
 </div>
-<!--about-end-->
-<!--product-starts-->
+
 <div class="product">
 	<div class="container">
 		<div class="product-top">
@@ -170,4 +166,3 @@
 		</div>
 	</div>
 </div>
-<!--product-end-->
