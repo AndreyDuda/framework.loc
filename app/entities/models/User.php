@@ -12,18 +12,27 @@ class User
 {
 	/** @Id @Column(type="integer") @GeneratedValue **/
 	protected $id;
+	
+	/**
+	 * @Column(type="string")
+	 */
+	protected $login;
+	
 	/**
 	 * @Column(type="string")
 	 */
 	protected $name;
+	
 	/**
 	 * @Column(type="string")
 	 */
 	protected $email;
+	
 	/**
 	 * @Column(type="string")
 	 */
 	protected $password;
+	
 	
 	public function setName($name)
 	{

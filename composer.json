@@ -9,6 +9,7 @@
   "require": {
         "vlucas/phpdotenv": "^3.4",
 		"doctrine/orm": "^2.6.2",
-		"symfony/yaml": "2.*"
+		"symfony/yaml": "2.*",
+        "robmorgan/phinx": "^0.10.7"
     }
 }
