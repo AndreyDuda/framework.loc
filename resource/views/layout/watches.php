@@ -211,7 +211,7 @@
 		</div>
 	</div>
 </div>
-
+<?php $this->getContent() ?>
 <div class="information">
 	<div class="container">
 		<div class="infor-top">

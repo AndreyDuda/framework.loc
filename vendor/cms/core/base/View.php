@@ -35,6 +35,10 @@ class View
 	public $layout;
 	
 	/**
+	 * @var string
+	 */
+	public $content;
+	/**
 	 * @var array
 	 */
 	public $data = [];
@@ -74,7 +78,11 @@ class View
 		}
 	}
 	
-	public function render($data)
+	/**
+	 * @param $data
+	 * @throws \Exception
+	 */
+	public function render(array $data)
 	{
 		if(is_array($data)) {
 			extract($data);
@@ -84,8 +92,8 @@ class View
 		
 		if (file_exists($viewFile)) {
 			ob_start();
-			$content = ob_get_clean();
 			require_once $viewFile;
+			$this->content = ob_get_clean();
 			
 		} else {
 			throw new \Exception("не найден вид " . $viewFile);
@@ -99,12 +107,23 @@ class View
 		}
 	}
 	
-	public function getMeta()
+	/**
+	 * @return string
+	 */
+	public function getMeta(): string
 	{
 		$output  = '<title>' . $this->meta['title'] . '</title>' . PHP_EOL;
 		$output .= '<meta name="description" content="' . $this->meta['desc'] .'">' . PHP_EOL;
 		$output .= '<meta name="keywords" content="' . $this->meta['keywords'] .'">' . PHP_EOL;
 		
 		return $output;
+	}
+	
+	/**
+	 *
+	 */
+	public function getContent(): void
+	{
+		echo $this->content;
 	}
 }
