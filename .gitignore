@@ -2,5 +2,10 @@ docker/mysql
 .idea
 vendor/*
 !vendor/cms
+!vendor/robmorgan
+vendor/robmorgan/phinx/*
+!vendor/robmorgan/phinx/src
+
+
 storage/cache
 storage/errors
