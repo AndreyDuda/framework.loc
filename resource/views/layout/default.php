@@ -11,6 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<?php echo $this->getMeta();?>
 </head>
+<h1>Default</h1>
 <body>
 <?php echo $content;?>
 </body>
