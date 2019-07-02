@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Test extends AbstractMigration
+class CreateOrderProduct extends AbstractMigration
 {
     /**
      * More information on writing migrations is available here:
@@ -21,18 +21,14 @@ class Test extends AbstractMigration
      */
 
     protected $name = '';
-	
-	public function up()
-	{
-		$table = $this->table('categories');
-		$table->addColumn('name', 'string')
-			->addColumn('parentId', 'integer', array('default'=>0))
-			->create();
-		
-	}
-	
-	public function down()
-	{
-		$this->dropTable('categories');
-	}
+
+    public function up()
+    {
+
+    }
+
+    public function down()
+    {
+
+    }
 }
