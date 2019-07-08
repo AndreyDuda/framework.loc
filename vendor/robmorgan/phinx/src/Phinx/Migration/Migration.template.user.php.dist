@@ -20,8 +20,6 @@ class $className extends $baseClassName
      * with the Table class.
      */
 
-    protected $name = '';
-
     public function up()
     {
 
