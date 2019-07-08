@@ -18,12 +18,14 @@ class BrandsSeeder extends AbstractSeed
         $faker = \Faker\Factory::create();
 
         $data = [];
+        $dir = dirname(__DIR__, 3) . '/public/images/brands';
         for ($i = 0; $i < 5; ++$i) {
+            $title = $faker->word;
             $data[] = [
-                'title' => 'brand ' . $i,
-                'alias' => 'brand-' . $i,
-                'img'   => 'brand_default.jpg',
-                'description' => $faker->text($maxNbChars = 200)
+                'title' => $faker->word,
+                'alias' => $faker->word,
+                'img'   => $faker->image($dir, 640, 480),
+                'description' => $faker->text($maxNbChars = 255)
             ];
         }
         $this->table('brands')->insert($data)->save();
