@@ -28,11 +28,11 @@ class CreateBrandTable extends AbstractMigration
             ->addColumn('img', 'string', ['limit' => 255,'default' => 'brand_default.jpg', 'null' => false])
             ->addColumn('description', 'string', ['limit' => 255, 'null' => false])
             ->addIndex(['alias'], ['unique' => true])
-        ;
+            ->save();
     }
 
     public function down()
     {
-        $this->table('brands')->drop();
+        $this->dropTable('brands');
     }
 }
