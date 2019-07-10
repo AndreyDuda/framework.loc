@@ -2,7 +2,6 @@
 
 namespace app\entities\models;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Persisters\Entity;
 
 /**
