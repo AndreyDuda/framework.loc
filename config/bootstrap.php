@@ -4,13 +4,12 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 use Dotenv\Dotenv;
 
-define('PATH_ROOT', dirname(__DIR__, 1));
 $isDevMode = true;
 
 $params = [];
 
-$config = Setup::createAnnotationMetadataConfiguration([PATH_ROOT ."/app/entities/models"], $isDevMode);
-$dotenv = Dotenv::create(PATH_ROOT);
+$config = Setup::createAnnotationMetadataConfiguration([dirname(__DIR__, 1) ."/app/entities/models"], $isDevMode);
+$dotenv = Dotenv::create(dirname(__DIR__, 1));
 $dotenv->load();
 $connection = [
 	'dbname' => getenv('DB_DATABASE'),

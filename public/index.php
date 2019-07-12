@@ -7,7 +7,7 @@ require_once CONFIG . '/routes.php';
 
 use cms\App;
 
-$test = new App();
+$test = new App($entityManager);
 
 /*$test = new \app\entities\models\User();
 $test->setName('Андрей');

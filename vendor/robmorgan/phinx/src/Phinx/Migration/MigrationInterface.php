@@ -161,7 +161,7 @@ interface MigrationInterface
     public function query($sql);
 
     /**
-     * Returns a new Query object that can be used to build complex SELECT, UPDATE, INSERT or DELETE
+     * Returns a new query object that can be used to build complex SELECT, UPDATE, INSERT or DELETE
      * queries and execute them against the current database.
      *
      * Queries executed through the query builder are always sent to the database, regardless of the

@@ -267,7 +267,7 @@ interface AdapterInterface
     public function executeActions(Table $table, array $actions);
 
     /**
-     * Returns a new Query object
+     * Returns a new query object
      *
      * @return \Cake\Database\Query
      */

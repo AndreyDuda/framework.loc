@@ -8,10 +8,13 @@ class App
 	 * @var Registry
 	 */
 	public static $app;
+
+	public static $em;
 	
-	public function __construct()
+	public function __construct($entityManager)
 	{
 		$query = trim($_SERVER['REQUEST_URI'], '/');
+		self::$em = $entityManager;
 		session_start();
 		self::$app = Registry::instance();
 		$this->getParams();
