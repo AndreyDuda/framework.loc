@@ -19,7 +19,7 @@ class BrandsSeeder extends AbstractSeed
 
         $data = [];
         $dir = dirname(__DIR__, 3) . '/public/images/brands';
-        for ($i = 0; $i < 5; ++$i) {
+        for ($i = 0; $i < 10; ++$i) {
             $title = $faker->word;
             $data[] = [
                 'title' => $faker->word,
